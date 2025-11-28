@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Full Name — Resume</title>
+  <meta name="description" content="Modern, responsive single-file HTML resume template." />
+  <style>
+    /* Simple reset */
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --muted:#6b7280; --accent:#0f62fe; --accent-2:#06b6d4;
+      --glass: rgba(15,98,254,0.08);
+      --max-width:900px;
+      --radius:12px;
+      color-scheme: light;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);}
+    .container{max-width:var(--max-width);margin:32px auto;padding:24px;}
+
+    /* Card */
+    .resume{display:grid;grid-template-columns:280px 1fr;gap:28px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.96));padding:28px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(16,24,40,0.08);}
+
+    /* Left column */
+    .aside{padding:18px;background:var(--card);border-radius:10px;height:100%;display:flex;flex-direction:column;gap:14px}
+    .photo{width:100%;aspect-ratio:1/1;border-radius:10px;background:linear-gradient(135deg,var(--glass),#eef6ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:28px}
+    .contact{font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+    .tag{display:inline-block;background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+    .section-title{font-size:13px;font-weight:700;color:#111827;margin-bottom:6px}
+    .padded{padding:8px 0}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .skill-name{font-size:14px}
+    .meter{height:8px;background:#eef2f8;border-radius:99px;overflow:hidden;width:100%;margin-left:8px}
+    .meter > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+
+    /* Right column */
+    .main{padding:18px;background:transparent}
+    .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    h1{margin:0;font-size:22px}
+    .subtitle{color:var(--muted);font-weight:600}
+    .summary{margin-top:12px;color:#374151;line-height:1.45}
+
+    .card-section{background:var(--card);padding:14px;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 8px rgba(16,24,40,0.02)}
+    .job{display:flex;justify-content:space-between;gap:12px}
+    .job-left{flex:1}
+    .job-right{min-width:120px;text-align:right;color:var(--muted)}
+    .job h3{margin:0;font-size:16px}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    ul{margin:8px 0 0 16px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .resume{grid-template-columns:1fr;}
+      .aside{order:2}
+    }
+
+    /* print friendly */
+    @media print{
+      body{background:white}
+      .container{margin:0;padding:0}
+      .resume{box-shadow:none;background:white;grid-template-columns:1fr}
+      .aside{display:none}
+      a:after{content:" (" attr(href) ")"}
+    }
+
+    /* small helper */
+    .muted{color:var(--muted)}
+    .gap{height:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="resume" role="document" aria-label="Resume">
+
+      <aside class="aside" aria-label="Sidebar">
+        <div class="photo" aria-hidden="true">FN</div>
+        <div>
+          <div class="section-title">Contact</div>
+          <div class="contact">
+            <div><strong>Full Name</strong></div>
+            <div class="muted">City, Country • +63 912 345 6789</div>
+            <div><a href="mailto:you@example.com">you@example.com</a></div>
+            <div><a href="https://yourwebsite.example" target="_blank" rel="noreferrer">yourwebsite.example</a></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">Skills</div>
+          <div class="padded">
+            <div class="skill"><div class="skill-name">HTML &amp; CSS</div><div style="width:30%"><div class="meter"><i style="width:90%"></i></div></div></div>
+            <div class="gap"></div>
+            <div class="skill"><div class="skill-name">JavaScript</div><div style="width:30%"><div class="meter"><i style="width:80%"></i></div></div></div>
+            <div class="gap"></div>
+            <div class="skill"><div class="skill-name">React / Vue</div><div style="width:30%"><div class="meter"><i style="width:70%"></i></div></div></div>
+            <div class="gap"></div>
+            <div class="skill"><div class="skill-name">Design / Figma</div><div style="width:30%"><div class="meter"><i style="width:60%"></i></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">Languages</div>
+          <div class="padded muted">English (Fluent)<br/>Filipino (Native)</div>
+        </div>
+
+        <div style="margin-top:auto;font-size:13px;color:var(--muted)">Last updated: <strong>Nov 28, 2025</strong></div>
+      </aside>
+
+      <main class="main">
+        <header class="head">
+          <div>
+            <h1>Full Name</h1>
+            <div class="subtitle">Product Designer • Frontend Engineer</div>
+            <div class="tag" style="margin-top:10px">Open to work</div>
+          </div>
+          <div class="muted" style="text-align:right">LinkedIn: /in/yourname<br/>GitHub: /yourhandle</div>
+        </header>
+
+        <section class="card-section" aria-labelledby="summary-heading">
+          <h2 id="summary-heading" class="section-title">Summary</h2>
+          <p class="summary">Versatile product designer and frontend engineer with 6+ years building delightful web experiences. Skilled in end-to-end product design, high-fidelity UI, and performant frontend implementations. Passionate about user-centered design and clean, maintainable code.</p>
+        </section>
+
+        <section class="card-section" aria-labelledby="experience-heading">
+          <h2 id="experience-heading" class="section-title">Experience</h2>
+
+          <article class="job" aria-label="Job at Company A">
+            <div class="job-left">
+              <h3>Senior Product Designer — Company A</h3>
+              <div class="meta">Remote • Jan 2022 – Present</div>
+              <ul>
+                <li>Led redesign of onboarding flow that improved activation by 28%.</li>
+                <li>Built design system components and collaborated with frontend team to implement them in React.</li>
+              </ul>
+            </div>
+            <div class="job-right">Jan 2022 — Present</div>
+          </article>
+
+          <div class="gap"></div>
+
+          <article class="job" aria-label="Job at Company B">
+            <div class="job-left">
+              <h3>Frontend Engineer — Company B</h3>
+              <div class="meta">Manila, PH • Jul 2019 – Dec 2021</div>
+              <ul>
+                <li>Implemented accessible, high-performance landing pages and dashboard features.</li>
+                <li>Reduced bundle size by 35% and improved Lighthouse performance scores.</li>
+              </ul>
+            </div>
+            <div class="job-right">Jul 2019 — Dec 2021</div>
+          </article>
+
+        </section>
+
+        <section class="card-section" aria-labelledby="projects-heading">
+          <h2 id="projects-heading" class="section-title">Selected Projects</h2>
+          <ul>
+            <li><strong>Project X</strong> — End-to-end design and implementation of a B2B analytics dashboard.</li>
+            <li><strong>Open Source</strong> — Maintainer of UI components library (React) with 1k+ stars.</li>
+          </ul>
+        </section>
+
+        <section class="card-section" aria-labelledby="education-heading">
+          <h2 id="education-heading" class="section-title">Education</h2>
+          <div>
+            <strong>B.S. Computer Science</strong>, University Name — 2015–2019
+          </div>
+        </section>
+
+        <section class="card-section" aria-labelledby="footer-heading">
+          <h2 id="footer-heading" class="section-title">Interests &amp; Extras</h2>
+          <div class="muted">Design systems, performance optimization, mentorship, climbing, and photography.</div>
+        </section>
+
+      </main>
+
+    </article>
+  </div>
+</body>
+</html>
